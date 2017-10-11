@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Fake Website</title>
+    <link rel="stylesheet" href="/css/styles.css">
+  </head>
+  <body>
+    <h1>Hello World!</h1>
+    <span>cool story bro...</span>
+    <span>blah blah blah...</span>
+    <button type="button" name="button">click me</button>
+  </body>
+  <script type="text/javascript">
+
+  </script>
+</html>
