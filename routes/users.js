@@ -23,6 +23,8 @@ router.post('/register', upload.single('profileimage'), (req, res, next) => {
   var password = req.body.password;
   var password2 = req.body.password2;
 
+  var User = require('../models/user');
+
   if (req.file) {
     var profileimage = req.file.filename;
   } else {
@@ -45,7 +47,21 @@ router.post('/register', upload.single('profileimage'), (req, res, next) => {
       errors: errors
     });
   } else {
-
+    var newUser = new User({
+      name: name,
+      email: email,
+      username: username,
+      password: password,
+      profileimage: profileimage
+    });
+    user.createUser(newUser, function(err, user) {
+      if (err) {
+        console.log(user);
+        throw err;
+      }
+    });
+    res.location('/');
+    res.redirect('/');
   }
 
 });
